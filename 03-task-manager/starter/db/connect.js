@@ -1,1 +1,12 @@
-const connectionString = 'mongodb+srv://varunpatil2502:<password>@nodeexpressprojects.o3utw0f.mongodb.net/'
+const mongoose = require('mongoose');
+
+const connectDB = (url) => {
+    return mongoose.connect(url, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true
+    })
+}
+
+module.exports = connectDB;
